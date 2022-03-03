@@ -12,6 +12,14 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" 
          integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     </head>
+    <style>
+        h2 {
+          background-color: rgb(63, 205, 94);
+          color: black;
+          display: inline-block;
+          font-family: 'Times New Roman', Times, serif;
+      }
+      </style>
  
 <body>
 
@@ -30,7 +38,7 @@
      value="cell" >
   <label for="cellService">Cell service</label></br>
 
-  <input type="button" onclick="orderComputer()" value="Order a Computer">
+  <input type="button" onclick="orderComputer()" value="Order a Computer" style="background-color: greenyellow;">
 </form>
 
 
@@ -41,7 +49,7 @@
   <input type ="text" id="propertyname" name="propertyname" min=10 max=50 step=2 value="engraved"> <br><br>
   <label for="propertyvalue">Enter a value</label>
   <input type ="text" id="propertyvalue" name="propertyvalue" autofocus > <br> <br>
-  <input type="button" onclick="updateComputer()" value="Update the computer">
+  <input type="button" onclick="updateComputer()" value="Update the computer" style="background-color: rebeccapurple;">
 </form>
 <p id="result"></p>
 <script> 

@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html>
+    <style>
+        label {
+            display: inline-block;
+            width: 220px;
+        }
+        
+        p {
+            background-color: rgb(173, 196, 72);
+            color: rgb(156, 100, 100);
+            display: inline;
+        }
+        
+        p:hover {
+            background-color: rgba(153, 216, 93, 0.712);
+            color: rgb(37, 43, 40);
+            display: inline;
+        }
+        
+        h2 {
+            background-color: rgb(197, 65, 164);
+            color: rgb(53, 19, 19);
+            display: inline-block;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        </style>
+    
  
 <body>
 <h1>President guess by Rajitha Bandaru</h1>
 <h2>Getting input</h2>
 <title>Lab06_WebApps</title>
+<br>
 <form>
     <label for="George Washington">Enter the secret president name </label>
     <input type ="password" id="George Washington" value="George Washington" min=10 max=50 step=2 > <br>
@@ -16,28 +43,37 @@
 </form>
 <p id="result">This text will be replaced </p>
 <script> 
-let correct=0;
-let wrong=0;
-function checkGuess(){
-    let secretPresidentName = document.getElementById("George Washington").value
-    let GuessThePresidentName = document.getElementById("form1_nick").value 
-    let outputElement = document.getElementById("result");
-    if(secretPresidentName==GuessThePresidentName){
-        correct=correct+1;
-        outputElement.innerHTML=alert("You got it right");
-       outputText="Correct input count is :  " + correct;
-       outputElement.textContent=outputText;  
+    let correct = 0;
+    let wrong = 0;
+    var cntNew = 0;
+    function checkGuess (){
+    console.log("Getting form values")
+    password = document.getElementById("George Washington").value
+    text = document.getElementById("form1_nick").value
+    
+    out = document.getElementById("result")
+    if(password==text){
+        cntNew = 0;
+        correct = correct + 1;
+        out.innerHTML = "correct : " + correct + "wrong : " + wrong
+        alert("You got it right")  
     } else {
-        wrong=wrong+1;
-        outputElement.innerHTML=alert("Wrong president");
-        outputElement.textContent=wrong;
-        outputText="Wrong input count is : " + wrong;
-       outputElement.textContent=outputText;
+        cntNew = cntNew + 1;
+        wrong = wrong + 1;
+        out.innerHTML = "correct : " + correct + "wrong : " + wrong
+        alert("Wrong President")
+        if (cntNew >=3){
+            if (wrong >=3){
+                incorrectcheckGuess()
+             }
+         }
+     }
     }
-}
-</script>
-
-<br>    
+    function incorrectcheckGuess(){
+    alert("Sorry, game over.")
+    }
+    </script>
+    <br>    
 <div>
     <img src="Bachman's Sparrow.jpg" id="im" width="100" height="100" onclick="swapImage()">
     <script>
